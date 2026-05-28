@@ -1,9 +1,11 @@
+// Copyright 2021 NNTU-CS
 #ifndef INCLUDE_BST_H_
 #define INCLUDE_BST_H_
 
-#include <string>
-#include <vector>
 #include <algorithm>
+#include <string>
+#include <utility>
+#include <vector>
 
 template <typename T>
 class BST {
@@ -73,7 +75,8 @@ class BST {
   }
 
   int depth() const {
-    return depthNode(root);
+    if (!root) return 0;
+    return depthNode(root) - 1;
   }
 
   int search(const T& val) const {
